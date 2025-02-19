@@ -4,7 +4,7 @@ name: Continuous Deployment - test
 on:
   push:
     # указываем что при пуще в ветку main, будет запускаться
-    branches: ["docker"]
+    branches: ["main"]
 
 
 # переменные окружения
