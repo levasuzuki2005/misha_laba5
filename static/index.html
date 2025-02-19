@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>User Management</title>
+    </head>
+    <style>
+        .personal {
+            border: 1px solid black;
+            border-radius: 10px;
+            padding: 20px;
+            margin: 100px;
+        }
+        .form {
+            border-radius: 10px;
+            padding: 20px;
+            background-color: #e2e2e2;
+            max-width: 50%;
+            margin: 100px auto;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            text-align: center;
+        }
+        .form input,
+        button {
+            padding: 10px;
+        }
+        legend {
+            font-size: 30px;
+            letter-spacing: 0.1em;
+        }
+        button {
+            border: 0;
+            border-radius: 10px;
+            color: #fff;
+            font-size: 20px;
+            background-color: #db3232;
+            transition: all 0.5s ease;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #328fdb;
+        }
+        h1,
+        h2 {
+            text-align: center;
+        }
+        .grid {
+          display: grid;
+          grid-template-columns: repeat(3, 1fr);
+        }
+    </style>
+
+    <body>
+        <!-- Основной заголовок страницы -->
+        <h1>Personal cabinet</h1>
+
+        <div class="personal">
+            <h1>Login</h1>
+            <form
+                class="form"
+                id="login-form"
+                method="post"
+                enctype="multipart/form-data"
+            >
+                <legend>Auth</legend>
+                <input type="text" id="login" placeholder="login" />
+                <input placeholder="password" type="password" id="password" />
+                <button>Login</button>
+            </form>
+            <form class="form" id="users-me-form" method="post">
+                <legend>Get info for me</legend>
+                <button>Get</button>
+            </form>
+            <div id="user-info"></div>
+        </div>
+        <hr />
+        <!-- Раздел для отображения списка пользователей -->
+        <div>
+            <!-- Заголовок для списка пользователей -->
+            <h1>Users Management</h1>
+            <!-- Ненумерованный список, в который будет добавлен список пользователей
+-->
+
+            <ul id="user-list"></ul>
+        </div>
+
+        <!-- Раздел для создания нового пользователя -->
+        <section class="grid">
+            <div>
+                <!-- Заголовок для формы создания пользователя -->
+                <!-- Форма для создания нового пользователя -->
+                <form class="form" id="create-user-form">
+                    <legend>Create User</legend>
+                    <!-- Поле ввода для имени пользователя -->
+                    <input
+                        type="text"
+                        id="username"
+                        placeholder="Username"
+                        required
+                    />
+                    <!-- Поле ввода для email пользователя -->
+                    <input
+                        type="email"
+                        id="email"
+                        placeholder="Email"
+                        required
+                    />
+                    <!-- Поле ввода для полного имени пользователя -->
+                    <input type="text" id="full_name" placeholder="Full Name" />
+                    <!-- Поле ввода для пароля пользователя -->
+                    <input
+                        type="password"
+                        id="password"
+                        placeholder="Password"
+                        required
+                    />
+                    <!-- Кнопка для отправки формы и создания пользователя -->
+                    <button type="submit">Create User</button>
+                </form>
+            </div>
+
+            <!-- Раздел для обновления существующего пользователя -->
+            <div>
+                <!-- Заголовок для формы обновления пользователя -->
+                <!-- Форма для обновления данных пользователя -->
+                <form class="form" id="update-user-form">
+                    <legend>Update User</legend>
+
+                    <!-- Поле ввода для ID пользователя, которого нужно обновить -->
+                    <input
+                        type="number"
+                        id="update-user-id"
+                        placeholder="User ID"
+                        required
+                    />
+                    <!-- Поле ввода для нового имени пользователя -->
+                    <input
+                        type="text"
+                        id="update-username"
+                        placeholder="Username"
+                    />
+                    <!-- Поле ввода для нового email пользователя -->
+                    <input type="email" id="update-email" placeholder="Email" />
+                    <!-- Поле ввода для нового полного имени пользователя -->
+
+                    <input
+                        type="text"
+                        id="update-full_name"
+                        placeholder="Full Name"
+                    />
+                    <!-- Поле ввода для нового пароля пользователя -->
+                    <input
+                        type="password"
+                        id="update-password"
+                        placeholder="Password"
+                    />
+                    <!-- Кнопка для отправки формы и обновления пользователя -->
+                    <button type="submit">Update User</button>
+                </form>
+            </div>
+
+            <!-- Раздел для удаления пользователя -->
+            <div>
+                <!-- Заголовок для формы удаления пользователя -->
+                <!-- Форма для удаления пользователя по ID -->
+                <form class="form" id="delete-user-form">
+                    <legend>Delete User</legend>
+
+                    <!-- Поле ввода для ID пользователя, которого нужно удалить -->
+                    <input
+                        type="number"
+                        id="delete-user-id"
+                        placeholder="User ID"
+                        required
+                    />
+                    <!-- Кнопка для отправки формы и удаления пользователя -->
+                    <button type="submit">Delete User</button>
+                </form>
+            </div>
+        </section>
+
+        <script src="/static/script.js" type="text/javascript"></script>
+    </body>
+</html>
