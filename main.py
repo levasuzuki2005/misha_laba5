@@ -26,7 +26,7 @@ db_user_password = os.getenv('DB_USER_PASSWORD')
 db_ip = os.getenv('DB_IP')
 
 
-
+# test commit
 # Создание объекта FastAPI
 app = FastAPI()
 
