@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FastAPI Cluster Application</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+            color: #333;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        header {
+            background-color: #4a90e2;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+        h1 {
+            margin: 0;
+        }
+        .container {
+            padding: 20px;
+            background-color: #f9f9f9;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        .btn {
+            display: inline-block;
+            background-color: #4a90e2;
+            color: white;
+            padding: 10px 15px;
+            text-decoration: none;
+            border-radius: 5px;
+            margin-top: 15px;
+        }
+        .btn:hover {
+            background-color: #357abd;
+        }
+        footer {
+            margin-top: 20px;
+            text-align: center;
+            color: #777;
+        }
+        .cluster-info {
+            background-color: #e9f5ff;
+            padding: 15px;
+            border-radius: 5px;
+            margin-top: 20px;
+            border-left: 4px solid #4a90e2;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Welcome to FastAPI Cluster Application</h1>
+    </header>
+    
+    <div class="container">
+        <h2>API Endpoints</h2>
+        <p>This application provides a secure REST API for user management with high availability through clustering.</p>
+        
+        <div class="cluster-info">
+            <h3>Cluster Information</h3>
+            <p>This application runs on a cluster of 3 FastAPI instances with Nginx load balancing.</p>
+            <p>Each request is automatically routed to one of the available instances for better performance and reliability.</p>
+        </div>
+        
+        <h3>Available Routes:</h3>
+        <ul>
+            <li><strong>Authentication:</strong> <code>/api/token</code> - Get JWT token</li>
+            <li><strong>Register:</strong> <code>/api/register</code> - Create new user</li>
+            <li><strong>Users:</strong> <code>/api/users</code> - Get all users</li>
+            <li><strong>Current User:</strong> <code>/api/users/me</code> - Get current user</li>
+        </ul>
+        
+        <a href="/api/docs" class="btn">View API Documentation</a>
+    </div>
+    
+    <footer>
+        <p>&copy; 2023 FastAPI Cluster Application. Deployed with Docker Compose and Nginx.</p>
+    </footer>
+</body>
+</html> 
